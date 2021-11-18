@@ -98,6 +98,9 @@ struct RuntimeConfig {
 
     enum class VRMode {
         Off,
+#ifdef WITH_VR_SERVICE_UNITY_KOLABBW
+        UnityKolab,
+#endif // WITH_VR_SERVICE_UNITY_KOLABBW
     };
     VRMode vr_mode = VRMode::Off;
 
