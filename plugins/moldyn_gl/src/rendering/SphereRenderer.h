@@ -254,7 +254,6 @@ private:
     glm::vec4 curClipCol;
     glm::vec4 curlightDir;
     glm::vec4 curCamUp;
-    float curCamNearClip;
     glm::vec4 curCamView;
     glm::vec4 curCamRight;
     glm::vec4 curCamPos;
