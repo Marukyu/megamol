@@ -157,6 +157,7 @@ int main(const int argc, const char** argv) {
     vr_service.setPriority(imagepresentation_service.getPriority() - 1);
     megamol::frontend::VR_Service::Config vrConfig;
     vrConfig.mode = megamol::frontend::VR_Service::Config::Mode(static_cast<int>(config.vr_mode));
+    const bool with_vr = vrConfig.mode != megamol::frontend::VR_Service::Config::Mode::Off;
 
     megamol::frontend::Command_Service command_service;
 #ifdef PROFILING
@@ -193,7 +194,7 @@ int main(const int argc, const char** argv) {
     services.add(imagepresentation_service, &imagepresentationConfig);
     services.add(command_service, nullptr);
 
-    if (vrConfig.mode != megamol::frontend::VR_Service::Config::Mode::Off) {
+    if (with_vr) {
         services.add(vr_service, &vrConfig);
     }
 
